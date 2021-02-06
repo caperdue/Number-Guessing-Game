@@ -1,10 +1,10 @@
 /**
-* The Number Guessing Game allows users to play
-* a game to guess a number between 1-100, allowing
-* to enter attempts, win/lose system, and have fun.
-*
-* @author  Carly Perdue
-*/
+ * The Number Guessing Game allows users to play
+ * a game to guess a number between 1-100, allowing
+ * to enter attempts, win/lose system, and have fun.
+ *
+ * @author  Carly Perdue
+ */
 
 //Importing the readline module for reading data from standard input
 const readline = require("readline");
@@ -23,8 +23,6 @@ let generatedNumber: number;
 /**
  * Sets up the number guessing game by setting defaults
  * and randomly generating a number.
- * 
- * @return {void} Nothing
  */
 function setUpGame() {
   numberGuessed = false;
@@ -35,10 +33,8 @@ function setUpGame() {
 }
 
 /**
- * Starts the number guessing game for users to guess a randomly 
+ * Starts the number guessing game for users to guess a randomly
  * generated number from 1-100.
- * 
- * @return {void} Nothing
  */
 async function startHere() {
   console.log("Welcome to Number Guessing game by Carly Perdue.\n");
@@ -46,7 +42,6 @@ async function startHere() {
   setUpGame();
   // Input being read from keyboard for user input
   for await (const userInput of inout) {
-    console.log(generatedNumber);
     // Check if user is initial game state
     if (initialRun) {
       // Make sure user input is a valid integer for attempts
@@ -78,8 +73,7 @@ async function startHere() {
           console.log("Too high, try again!");
         } else if (userInput.trim() < generatedNumber) {
           console.log("Too low, try again!");
-        }
-        else if (numAttempts === 0) {
+        } else if (numAttempts === 0) {
           gameLost = true;
           console.log("Sorry, you lose! Play again (y/n)?");
           process.stdout.write("> ");
@@ -92,7 +86,9 @@ async function startHere() {
             setUpGame();
           } else if (userInput.trim() === "n") break;
         } else {
-          console.log(`Your guess: ${userInput}. You have ${numAttempts} left!`);
+          console.log(
+            `Your guess: ${userInput}. You have ${numAttempts} left!`
+          );
           process.stdout.write("> ");
         }
       }
