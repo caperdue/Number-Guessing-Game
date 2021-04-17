@@ -98,7 +98,6 @@ function startHere() {
                 case 3:
                     if (!(inout_1_1 = _b.sent(), !inout_1_1.done)) return [3 /*break*/, 5];
                     userInput = inout_1_1.value;
-                    console.log(generatedNumber);
                     // Check if user is initial game state
                     if (initialRun) {
                         // Make sure user input is a valid integer for attempts
